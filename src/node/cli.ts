@@ -1,5 +1,6 @@
 // src/node/cli.ts
 import cac from "cac";
+import { startDevServer } from "./server";
 
 const cli = cac();
 
@@ -9,7 +10,7 @@ cli
   .alias("serve")
   .alias("dev")
   .action(async () => {
-    console.log("测试 cli~");
+    await startDevServer();
   });
 
 cli.help();
